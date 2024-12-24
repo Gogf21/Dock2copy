@@ -1,12 +1,12 @@
 # Первая стадия: Сборка
 FROM alpine as builder
 
-RUN apk add --no-cache git musl-dev
+RUN apk add --no-cache git gcc musl-dev
 
 WORKDIR /app
 
 RUN git clone https://github.com/Gogf21/shell.git .
-RUN gcc app/app/mainpidr.c
+RUN gcc app/main.c
 
 RUN chmod +x your_program.sh
 
