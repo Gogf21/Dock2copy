@@ -1,5 +1,5 @@
 # Первая стадия: Сборка
-FROM gcc:latest as builder
+FROM alpine as builder
 
 RUN apk add --no-cache git gcc
 
