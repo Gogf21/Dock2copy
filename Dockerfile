@@ -6,7 +6,7 @@ RUN apk add --no-cache git gcc musl-dev
 WORKDIR /app
 
 RUN git clone https://github.com/Gogf21/shell.git .
-RUN gcc -o mypr app/app/main.c -static
+RUN gcc -o mypr app/main.c -static
 
 RUN chmod +x mypr
 
