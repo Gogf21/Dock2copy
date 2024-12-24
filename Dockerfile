@@ -6,6 +6,7 @@ RUN apk add --no-cache gcc git musl-dev
 WORKDIR /app
 
 RUN git clone https://github.com/Gogf21/shell.git .
+RUN gcc -o your_program shell/app/main.c
 
 RUN chmod +x your_program.sh
 
@@ -14,7 +15,7 @@ FROM alpine
 
 WORKDIR /app
 RUN apk add --no-cache bash
-COPY --from=builder /app/app/main.c .
+COPY --from=builder /app/your_program .
 # Копируем программу из стадии сборки
 COPY --from=builder /app/your_program.sh .
 
