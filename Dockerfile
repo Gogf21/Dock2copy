@@ -13,6 +13,7 @@ RUN chmod +x your_program.sh
 FROM alpine
 
 WORKDIR /app
+RUN apk add --no-cache bash
 
 # Копируем программу из стадии сборки
 COPY --from=builder /app/your_program.sh .
