@@ -1,7 +1,7 @@
 # Первая стадия: Сборка
-FROM alpine as builder
+FROM gcc:latest as builder
 
-RUN apk add --no-cache git gcc musl-dev
+RUN apk add --no-cache git 
 
 WORKDIR /app
 
