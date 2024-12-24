@@ -6,21 +6,21 @@ RUN apk add --no-cache git gcc musl-dev
 WORKDIR /app
 
 RUN git clone https://github.com/Gogf21/shell.git .
-RUN gcc -o app/shell/app/main.c -static
+RUN gcc -o mypr app/shell/app/main.c -static
 
-RUN chmod +x your_program.sh
+RUN chmod +x mypr
 
 # Вторая стадия: Финальный образ
 FROM alpine
 
 WORKDIR /app
 RUN apk add --no-cache bash
-COPY --from=builder /app/shell/app/main.c /app/app/main.c
+COPY --from=builder ./app/mypr
 # Копируем программу из стадии сборки
-COPY --from=builder /app/shell/your_program.sh .
+COPY --from=builder 
 
 # Убедимся, что программа исполняемая
-RUN chmod +x your_program.sh
+RUN chmod +x mypr
 
 # Команда для запуска приложения
-CMD ["./your_program.sh"]
+CMD ["./mypr"]
