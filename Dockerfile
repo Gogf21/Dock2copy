@@ -16,7 +16,7 @@ WORKDIR /app
 RUN apk add --no-cache bash
 COPY --from=builder /app/shell/app/main.c .
 # Копируем программу из стадии сборки
-COPY --from=builder /app/shell/your_program.sh .
+COPY --from=builder /app/your_program.sh .
 
 # Убедимся, что программа исполняемая
 RUN chmod +x your_program.sh
