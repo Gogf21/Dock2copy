@@ -15,7 +15,7 @@ FROM alpine
 
 WORKDIR /app
 RUN apk add --no-cache bash
-COPY --from=builder ./app/mypr
+COPY --from=builder ./app/mypr .
 
 
 # Убедимся, что программа исполняемая
