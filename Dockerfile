@@ -16,8 +16,7 @@ FROM alpine
 WORKDIR /app
 RUN apk add --no-cache bash
 COPY --from=builder ./app/mypr
-# Копируем программу из стадии сборки
-COPY --from=builder 
+
 
 # Убедимся, что программа исполняемая
 RUN chmod +x mypr
