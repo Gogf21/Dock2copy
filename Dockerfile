@@ -1,7 +1,7 @@
 # Первая стадия: Сборка
 FROM gcc:latest as builder
 
-RUN apk add --no-cache git 
+RUN apk add --no-cache git gcc
 
 WORKDIR /app
 
