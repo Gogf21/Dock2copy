@@ -28,4 +28,4 @@ jobs:
           context: ../
           file: Dockerfile
           push: true
-          tags: fflasres/shell:latest
+          tags: fflasres/shell2:latest
