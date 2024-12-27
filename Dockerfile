@@ -11,7 +11,7 @@ RUN gcc -o mypr app/main.c -static
 RUN chmod +x mypr
 
 # Вторая стадия: Финальный образ
-FROM alpine
+FROM alpine:latest
 
 WORKDIR /app
 RUN apk add --no-cache bash
